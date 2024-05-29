@@ -5,10 +5,9 @@
 
   <% if current_user.present? %>
     <div>
-      <%= button_to fa_icon('trash-o'), user_path(user), method: :delete,
+      <%= button_to fa_icon('trash-o'), user_path(user_id), method: :delete,
       form: { data: { turbo_confirm: "Ви впевненні, що хочете видалити користувача \"@#{current_user.nickname}\"?"}},
       class: 'text-red text-sm' %>
-  </div>
     </div>
   <% end %>
 </div>
