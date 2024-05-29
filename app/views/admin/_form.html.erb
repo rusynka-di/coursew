@@ -1,0 +1,14 @@
+<div class="mb-sm">
+    <%# <%= question.body %> 
+    <%= content_tag 'span', "@#{current_user.nickname}", class: 'mr-sm' %>
+</div>
+
+  <% if current_user.present? %>
+    <div>
+      <%= button_to fa_icon('trash-o'), user_path(user), method: :delete,
+      form: { data: { turbo_confirm: "Ви впевненні, що хочете видалити користувача \"@#{current_user.nickname}\"?"}},
+      class: 'text-red text-sm' %>
+  </div>
+    </div>
+  <% end %>
+</div>

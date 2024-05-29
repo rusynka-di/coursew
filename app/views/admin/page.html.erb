@@ -1,0 +1,16 @@
+<div class="container mt-sm">
+  <h2 class="title-lg">
+    <%= @user_id.count %>
+    <%= inclination(@user_id.count, 'користувач', 'користувачі', 'користувачів') %>
+  </h2>
+</div>
+
+  <% if @user_id.any? %>
+    <% @user_id.each do |user| %>
+      <div class="mt-sm container">
+        <%= render 'form', page: form %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Наразі немає зареєстрованих користувачі.</p>
+  <% end %>

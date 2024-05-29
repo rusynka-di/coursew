@@ -1,0 +1,32 @@
+<div class="container">
+  <h2 class="title">Приєднуйся і питай!</h2>
+
+  <% if @user.errors.any? %>
+    <div class="mt">  
+      <% @user.errors.full_messages.each do |message| %>
+        <p class="mb-sm text-red"><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mt">
+    <%= form_with model: @user, data: {turbo: false}  do |form| %>
+      <p><%= form.label :name, 'Ваше iм`я' %></p>
+      <p><%= form.text_field :name, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :nickname, 'Нік на сайті'%></p>
+      <p><%= form.text_field :nickname, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :email %></p>
+      <p><%= form.text_field :email, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :password %></p>
+      <p><%= form.password_field :password, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :password_confirmation %></p>
+      <p><%= form.password_field :password_confirmation, class: 'form-text-field'%></p>
+
+      <p class="mt-lg"><%= form.submit 'Зареєструватись', class: 'button button-main' %></p>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.button {
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 13px 7px;
+    text-decoration: none;
+}
+
+.button-main {
+    background-color: #9D0208;
+}
+
+.button-yellow {
+    background-color: #74111F; /* змінили колір на жовтий */
+}
+
+.buttons {
+    display: flex; /* Вирівнювання кнопок в ряд */
+    gap: 10px; /* Проміжок між кнопками */
+}

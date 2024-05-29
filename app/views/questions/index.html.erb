@@ -1,0 +1,26 @@
+<div class="container">
+  <p>
+    <%= link_to "Задати питання іншим користувачам", new_question_path, class: 'button button-main'%>
+  </p>
+  
+  <p class="container">
+    <%= render 'form2', question: @question %>
+  </p>
+</div>
+
+<div class="container mt-sm">
+  <h2 class="title-lg">
+    <%= @questions.count %>
+    <%= inclination(@questions.count, 'питання', 'питання', 'питань') %>
+  </h2>
+</div>
+
+  <% if @questions.any? %>
+    <% @questions.each do |question| %>
+      <div class="mt-sm container">
+        <%= render 'question', question: question %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Наразі у вас немає питань. Ви можете створити нове питання.</p>
+  <% end %>

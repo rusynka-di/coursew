@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 class="title">Редагування користувача</h2>
+  
+   <% if @user.errors.any? %>
+    <div class="mt">  
+      <% @user.errors.full_messages.each do |message| %>
+        <p class="mb-sm text-red"><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <div class="mt">
+    <%= form_with model: @user, data: {turbo: false} do |form| %>
+      <p><%= form.label :name, 'Ім`я' %></p>
+      <p><%= form.text_field :name, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :nickname, 'Нік на сайті'%></p>
+      <p><%= form.text_field :nickname, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :email %></p>
+      <p><%= form.text_field :email, class: 'form-text-field'%></p>
+
+      <p class="mt-lg text-sm"> Якщо не хочете змінювати пароль - залиште ці поля пустими</p>
+
+      <p class="mt"><%= form.label :password %></p>
+      <p><%= form.password_field :password, class: 'form-text-field'%></p>
+
+      <p class="mt"><%= form.label :password_confirmation %></p>
+      <p><%= form.password_field :password_confirmation, class: 'form-text-field'%></p>
+
+      <p class="mt-lg">
+      <%= form.submit 'Зберегти', class: 'button button-main' %>
+      <span class="text-sm"> або <%= link_to "повернутись", :back %></span>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="mt-lg">
+    <%= button_to "Видалити профіль", user_path(@user),
+      method: :delete,
+      form: {data: {turbo_confirm: "Ви впевненні, що хочете видалити свій профіль?"}},
+    class: 'text-red text-sm' %>
+  </div>
+</div>
+    

@@ -1,0 +1,40 @@
+body {
+  background: #03071E;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 80px;
+  width: 150%;
+}
+
+.container {
+  background: #fff;
+  padding: 20px; /* перемістили сюди для стилю контейнера в середині .wrapper */
+}
+
+.navbar {
+  background-color: #5b0c28; /* Темно-червоний фон */
+  color: white; /* Білий текст */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  }
+
+
+.navbar a {
+  color: white; /* Білий колір посилань */
+  text-decoration: none; /* Відсутність підкреслення у посилань */
+}
+
+.navbar .logo {
+  margin: 0; /* Виправлення можливих відступів */
+  padding: 0;
+}
+
+

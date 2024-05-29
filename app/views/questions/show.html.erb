@@ -1,0 +1,6 @@
+ <h2 class="title-lg mb">Питання<%= @question.id %></h2>
+
+  <%= render 'question', question: @question %>
+
+ <p class="mb"> <%= link_to "Всі питання", questions_path, class: 'button button-main'%> </p>
+</div>

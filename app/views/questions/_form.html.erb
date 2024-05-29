@@ -1,0 +1,15 @@
+<% @question = current_user.questions.build %> 
+
+<%= form_with model: @question do |form| %>
+  <p> <%= form.label :body, 'Текст питання:' %></p>
+  <p> <%= form.text_area :body, rows: 5, class: 'form-text-area'%></p>
+
+ <p class="mt"> <%= form.label :user_id, 'Виберіть користувача:' %></p>
+<p>
+  <%= form.collection_select :user_id, User.where.not(id: current_user.id), :id, :nickname, 
+  { prompt: 'Виберіть користувача' }, { class: 'form-select' } %>
+</p>
+
+  <p class="mt"> <%= form.submit 'Зберегти', class: 'button button-main'%></p>
+<% end %> 
+

@@ -1,0 +1,23 @@
+* {
+    /* скидуються відступи */
+    margin: 0;
+    padding: 0;
+}
+
+/* скидуються розміри шрифтів і жирність */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer; /* щоб був курсор рука */
+    font-size: 100%;
+    text-decoration: underline; /* щоб виглядали як силки */
+}
+
+.button_to {
+    display: inline; /* щоб кнопка не перестрибувала на інший рядок */
+}
