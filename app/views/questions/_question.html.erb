@@ -14,10 +14,10 @@
 
   <% if question.id.present? %>
     <div>
-      <%= link_to fa_icon('pencil'), edit_question_path(question), title: 'Змінити питання' %>
-      <%= button_to fa_icon('trash-o'), question_path(question), method: :delete, title: 'Видалити питання' %>
+      <%= link_to fa_icon('pencil'), edit_question_path(question), title: 'Змінити завдання' %>
+      <%= button_to fa_icon('trash-o'), question_path(question), method: :delete, title: 'Видалити завдання' %>
     </div>
   <% else %>
-    <div>Питання не збережене</div>
+    <div>Завдання не збережене</div>
   <% end %>
 </div>

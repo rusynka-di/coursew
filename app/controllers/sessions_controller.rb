@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
 
     if user.present?
       session[:user_id] = user.id
-      user.role ||= :admin
-
       redirect_to root_path, notice: 'Ви увійшли на сайт'
     else
       flash.now[:alert] = "Неправильний email або пароль"

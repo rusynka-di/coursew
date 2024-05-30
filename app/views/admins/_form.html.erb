@@ -1,0 +1,18 @@
+<div class="title-sm question-sm">
+  <div class="mt-lg">
+    <%= content_tag 'span', "@#{user.nickname}" %>
+  </div>
+
+  <% if user.present? %>
+  <div class="title-sm question">
+      <%= button_to fa_icon('trash-o'), user_path(user), method: :delete,
+        form: { data: { turbo_confirm: "Ви впевненні, що хочете видалити користувача \"@#{user.nickname}\"?"}},
+        class: 'text-red text-sm mr-sm' %>
+      <%= form_with model: user, url: admin_update_role_user_path(user), method:  :put, local: true do |f| %> 
+          <%= f.check_box :admin, { checked: user.admin } %>
+          <%= f.label :admin, "Адміністратор", class: 'text-sm'%>
+          <%= f.submit 'Зберегти', class: 'button button-main'%>
+      <% end %> 
+  </div>
+  <% end %>
+</div>

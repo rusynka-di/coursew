@@ -1,6 +1,6 @@
 # app/admin/user.rb
 ActiveAdmin.register User do
-  permit_params :name, :nickname, :email, :password, :password_confirmation, :role
+  permit_params :name, :nickname, :email, :password, :password_confirmation, :role, :admin
 
   form do |f|
     f.inputs "User Details" do

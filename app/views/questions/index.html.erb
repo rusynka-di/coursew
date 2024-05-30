@@ -1,6 +1,6 @@
 <div class="container">
   <p>
-    <%= link_to "Задати питання іншим користувачам", new_question_path, class: 'button button-main'%>
+    <%= link_to "Доручити завдання іншому користувачу", new_question_path, class: 'button button-main'%>
   </p>
   
   <p class="container">
@@ -11,7 +11,7 @@
 <div class="container mt-sm">
   <h2 class="title-lg">
     <%= @questions.count %>
-    <%= inclination(@questions.count, 'питання', 'питання', 'питань') %>
+    <%= inclination(@questions.count, 'завдання', 'завдання', 'завдань') %>
   </h2>
 </div>
 
@@ -22,5 +22,5 @@
       </div>
     <% end %>
   <% else %>
-    <p>Наразі у вас немає питань. Ви можете створити нове питання.</p>
+    <p>Наразі у вас немає завдань. Ви можете створити нове завдання.</p>
   <% end %>
